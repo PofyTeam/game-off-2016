@@ -4,7 +4,7 @@
 
 ## Platform
 
-**_Tom Hax_** is a 2D shooter platformer created with [**_Unity_**][Unity] engine using **_C#_** as scripting language.
+**_Tom Hax_** is a 2D shooter platformer created with [**_Unity_**][Unity] engine using **_C#_** as a scripting language.
 
 ## Credits
 
