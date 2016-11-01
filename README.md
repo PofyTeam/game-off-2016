@@ -11,3 +11,25 @@
 ## Platform
 
 **_Tom Hax_** is a 2D shoter platformer created with **_Unity_** engine using **_C#_** as scripting language.
+
+## Credits
+
+### Game Design
+Danilo Čoda Vukomanović
+Radoš Korać
+
+### Programming
+Danilo Čoda Vukomanović
+
+### Art
+Radoš Korać
+
+### Animation
+Radoš Korać
+
+## Sound
+Danilo Čoda Vukomanović
+Radoš Korać
+
+## Music
+Danilo Čoda Vukomanović
