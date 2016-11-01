@@ -27,9 +27,9 @@ Radoš Korać
 ### Animation
 Radoš Korać
 
-## Sound
+### Sound
 Danilo Čoda Vukomanović
 Radoš Korać
 
-## Music
+### Music
 Danilo Čoda Vukomanović
