@@ -15,21 +15,24 @@
 ## Credits
 
 ### Game Design
-Danilo Čoda Vukomanović
-Radoš Korać
+* [Danilo Čoda Vukomanović][Danilo] 
+* [Radoš Korać][Korac]
 
 ### Programming
-Danilo Čoda Vukomanović
+* [Danilo Čoda Vukomanović][Danilo] 
 
 ### Art
-Radoš Korać
+* [Radoš Korać][Korac]
 
 ### Animation
-Radoš Korać
+* [Radoš Korać][Korac]
 
 ### Sound
-Danilo Čoda Vukomanović
-Radoš Korać
+* [Danilo Čoda Vukomanović][Danilo] 
+* [Radoš Korać][Korac]
 
 ### Music
-Danilo Čoda Vukomanović
+* [Danilo Čoda Vukomanović][Danilo] 
+
+[Danilo]: http://example.com/
+[Korac]: http://example.com/
