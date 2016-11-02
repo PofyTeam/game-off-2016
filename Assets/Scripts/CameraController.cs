@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class CameraController : MonoBehaviour
 {
-    public CameraFollowState followState = new CameraFollowState(1, true);
+    //public CameraFollowState followState = new CameraFollowState(1, true);
     public bool follow;
     protected List<State> _stateStack = new List<State>();
 
@@ -11,7 +11,7 @@ public class CameraController : MonoBehaviour
     {
         if (this.follow)
         {
-            AddState(this.followState);
+       //     AddState(this.followState);
         }
     }
 
@@ -64,46 +64,3 @@ public abstract class State : IState
     public abstract bool Update();
 }
 
-[System.Serializable]
-public class CameraFollowState : State
-{
-    public CameraFollowState(float duration, bool loop)
-    {
-        Initialize(duration, loop);
-    }
-
-    public override void Initialize(float duration, bool loop)
-    {
-        this.duration = duration;
-        this.loop = loop;
-    }
-
-    public override void EnterState()
-    {
-        if (!this._isInitialized)
-            Initialize(this.duration, this.loop);
-
-        this._timer = this.duration;
-    }
-
-    public override bool Update()
-    {
-        this._timer -= Time.deltaTime;
-        if (this._timer < 0)
-            this._timer = 0;
-        float normalizedTime = 1 - this._timer / this.duration;
-
-        if (this._timer <= 0)
-            if (!this.loop)
-                return true;
-
-        return false;
-    }
-
-    public override void ExitState()
-    {
-
-    }
-
-
-}
