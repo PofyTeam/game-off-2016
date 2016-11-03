@@ -9,6 +9,7 @@
 		_DisplacementTex("Displacement Texture", 2D) = "white"{}
 		_Strength("Displacement Strength", Range(0,1)) = 0
 
+		_VignetteTex("Vignette Texture",2D) = "white" {}
 		_glowBlend("Glow", Range(0,1)) = 0.0
 	}
 	SubShader{
@@ -21,6 +22,8 @@
 				uniform sampler2D _MainTex;
 				uniform sampler2D _MaskTex;
 				uniform sampler2D _DisplacementTex;
+				uniform sampler2D _VignetteTex;
+
 				fixed _maskBlend;
 				fixed _maskSize;
 				fixed _glowBlend;
@@ -41,13 +44,14 @@
 						half2 n = tex2D(_DisplacementTex, i.uv);
 						//half2 n = i.uv;
 						half2 d = n * 2 - 1;
-						i.uv += d * _Strength;
-						i.uv = saturate(i.uv);
+						float2 uv = i.uv;
+						uv += d * _Strength;
+						uv = saturate(i.uv);
 
 					fixed4 c =0;
 
 					fixed4 mask = lerp(fixed4(1,1,1,1),tex2D(_MaskTex, i.uv * _maskSize),_maskBlend);
-					fixed4 base = tex2D(_MainTex, i.uv);
+					fixed4 base = tex2D(_MainTex, uv);
 					//base += pow(base,1+_glowBlend);
 					c = base * mask;
 
@@ -59,7 +63,7 @@
 						//glow *= _glowBlend;
 						glow = lerp(c, glow, _glowBlend);
 						glow *= 0.5;
-					return saturate(c*0.5 + glow);
+					return saturate(c*0.5 + glow)* tex2D(_VignetteTex, i.uv);
 
 					//return c;
 				}
