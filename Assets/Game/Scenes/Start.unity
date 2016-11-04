@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44692492, g: 0.4967869, b: 0.57508546, a: 1}
+  m_IndirectSpecularColor: {r: 0.44711876, g: 0.49739325, b: 0.57615495, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -309,12 +309,26 @@ GameObject:
   m_PrefabParentObject: {fileID: 1000012711553846, guid: 50a2cd25ac19e4c4291fce3c684d7f6c,
     type: 2}
   m_PrefabInternal: {fileID: 504846501}
---- !u!20 &866489911 stripped
-Camera:
-  m_PrefabParentObject: {fileID: 20000011083817704, guid: 50a2cd25ac19e4c4291fce3c684d7f6c,
-    type: 2}
-  m_PrefabInternal: {fileID: 504846501}
---- !u!114 &866489913
+--- !u!114 &866489909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 866489907}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e58a1ef8a0cbc4645949815f55187932, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  noiseTexture: {fileID: 2800000, guid: d4f58dda85fbce843a4b85e9ef66be3c, type: 3}
+  noiseXSpeed: 100
+  noiseYSpeed: 100
+  noiseCutoff: 0.35
+  vignetteTexture: {fileID: 2800000, guid: b63e2b08f1bf4344eb92b67ab683707e, type: 3}
+  lineTexture: {fileID: 2800000, guid: a2e31bd0cda1a4f4b852df3029e82946, type: 3}
+  lineColor: {r: 1, g: 1, b: 1, a: 1}
+  distortionStrength: 3
+--- !u!114 &866489910
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -328,6 +342,11 @@ MonoBehaviour:
   intensity: 0
   effectMaterial: {fileID: 2100000, guid: 2fd5eabe28924d8478d1ff0f8fa8bc7b, type: 2}
   target: {fileID: 866489911}
+--- !u!20 &866489911 stripped
+Camera:
+  m_PrefabParentObject: {fileID: 20000011083817704, guid: 50a2cd25ac19e4c4291fce3c684d7f6c,
+    type: 2}
+  m_PrefabInternal: {fileID: 504846501}
 --- !u!1 &1011731775
 GameObject:
   m_ObjectHideFlags: 0
@@ -386,7 +405,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3bafb03366c3b78439057c71a96c3175, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 324d9e980667446f19ed79b29f004f3b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
