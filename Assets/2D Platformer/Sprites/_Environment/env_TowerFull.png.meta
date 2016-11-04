@@ -1,7 +1,8 @@
 fileFormatVersion: 2
 guid: fb32ede6a3015fe4eb0e19d81e5e0f00
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: env_TowerFull
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -42,7 +43,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 40
+  spritePixelsToUnits: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8

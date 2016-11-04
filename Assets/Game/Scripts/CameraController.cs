@@ -20,6 +20,9 @@
 
         #endregion
         public Transform target;
+        private Rigidbody2D _targetRB;
+
+        public SpriteRenderer sky, far;
 
         #region Mono
         void Awake ()
@@ -31,6 +34,7 @@
 		{
 			base.Start ();
 			this.follow = true;
+            AddState(this.UpdateBackground);
 		}
         #endregion Mono
 
@@ -61,6 +65,14 @@
 		void EnterFollowState ()
 		{
             Debug.Log(TAG + "Start Following");
+            if (this._targetRB == null)
+                this._targetRB = this.target.GetComponentInParent<Rigidbody2D>();
+            if (this._targetRB != null)
+            {
+                AddState(FollowRB);
+                return;
+            }
+
 			AddState (this.Follow);
 		}
 
@@ -71,13 +83,38 @@
             this._selfTransform.position = newPosition;
 		}
 
+        void FollowRB()
+        {
+           // float _speed = Mathf.Max(this.followSpeed,Mathf.Min (this._targetRB.velocity.sqrMagnitude * 0.01f,1000f));
+
+            float _speed = Mathf.Clamp(this._targetRB.velocity.sqrMagnitude * 0.01f, this.followSpeed, 1000f);
+
+            Vector3 newPosition = Vector3.MoveTowards(this._selfTransform.position, this.target.position + this.followOffset, _speed * Time.smoothDeltaTime);
+            newPosition[2] = this._selfTransform.position[2];
+            this._selfTransform.position = newPosition;
+
+        }
+
+        void UpdateBackground()
+        {
+            Vector3 newPosition = this.transform.position;
+            this.far.transform.localPosition = newPosition * -0.2f;
+        }
+
 		void ExitFollowState ()
 		{
 			RemoveState (this.Follow);
 		}
 
 		#endregion
+
 	}
+
+    [System.Serializable]
+    public class BackgroundSet
+    {
+        public Sprite sky, far, near;
+    }
 	
 	
 
