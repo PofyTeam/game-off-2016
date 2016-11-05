@@ -126,8 +126,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011094995504}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 10.4, z: 45}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 212, z: 45}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 4000012748267536}
@@ -213,8 +213,11 @@ MonoBehaviour:
   target: {fileID: 0}
   sky: {fileID: 212000013743322840}
   far: {fileID: 212000011716278770}
-  followSpeed: 150
-  followOffset: {x: 0, y: 32, z: 0}
+  followSpeed: 400
+  followOffset: {x: 0, y: 0, z: 0}
+  followBounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 2048, y: 1024, z: 256}
 --- !u!212 &212000011716278770
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -244,7 +247,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9813abdadeb6e4dd9a12140dadc778f1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f0f4795699aef47bfb00f17982e8d17c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

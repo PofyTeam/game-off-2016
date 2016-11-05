@@ -329,33 +329,10 @@ Prefab:
       propertyPath: target
       value: 
       objectReference: {fileID: 60305452}
-    - target: {fileID: 114000010431692424, guid: 50a2cd25ac19e4c4291fce3c684d7f6c,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000013992050820, guid: 50a2cd25ac19e4c4291fce3c684d7f6c, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 212
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000013992050820, guid: 50a2cd25ac19e4c4291fce3c684d7f6c, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000013992050820, guid: 50a2cd25ac19e4c4291fce3c684d7f6c, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 212000011716278770, guid: 50a2cd25ac19e4c4291fce3c684d7f6c,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: f0f4795699aef47bfb00f17982e8d17c,
-        type: 3}
     - target: {fileID: 114000014096738668, guid: 50a2cd25ac19e4c4291fce3c684d7f6c,
         type: 2}
-      propertyPath: followOffset.y
-      value: 0
+      propertyPath: followBounds.m_Extent.z
+      value: 256
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 50a2cd25ac19e4c4291fce3c684d7f6c, type: 2}
