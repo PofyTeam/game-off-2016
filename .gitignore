@@ -3,3 +3,4 @@ Temp/
 *.csproj
 obj/
 TomHax.userprefs
+.vs/

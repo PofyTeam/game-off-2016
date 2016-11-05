@@ -66,7 +66,11 @@
             for (int i = 0; i < colliders.Length; i++)
             {
                 if (colliders[i].gameObject != gameObject)
-                    m_Grounded = true;
+                { m_Grounded = true;
+                    Vector3 newTargetPosition = this.cameraTarget.localPosition;
+                    newTargetPosition[1] = 0;
+                    //this.cameraTarget.localPosition = newTargetPosition;
+                }
             }
             m_Anim.SetBool("Ground", m_Grounded);
 
@@ -122,6 +126,10 @@
                 m_Grounded = false;
                 m_Anim.SetBool("Ground", false);
                 m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+                // this.cameraTarget.localPosition
+            }else if(!m_Grounded && m_DoubleJump)
+            {
+                m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
             }
         }
 
@@ -141,40 +149,67 @@
         #endregion
 
         #region User Control
-
-       // private PlatformerCharacter2D m_Character;
         private bool m_Jump;
+        private bool m_DoubleJump;
 
+        private bool m_Fire;
+        private bool m_FireCharge;
+
+        public Range gunCharge;
         void UpdateInput()
         {
-            if (!m_Jump)
+            this.m_DoubleJump = false;
+            if (m_Jump)
             {
+                this.m_DoubleJump = CrossPlatformInputManager.GetButtonDown("Jump");
+            }
+            else {
                 // Read the jump input in Update so button presses aren't missed.
                 m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
             }
+
+            m_FireCharge = CrossPlatformInputManager.GetButton("Fire1");
+            if (m_FireCharge)
+            {
+                this.gunCharge.current += Time.deltaTime;
+                if (this.gunCharge.current >= this.gunCharge.max) {
+                    Fire();
+                }
+            }
+
+            m_Fire = CrossPlatformInputManager.GetButtonUp("Fire1");
+
+            if (this.m_Fire)
+            {
+                Fire();
+
+            }
         }
 
+        void Fire()
+        {
+            Debug.LogWarning("FIRING! " + this.gunCharge.current);
+            this.gunCharge.current = 0;
+        }
 
         private void InputFixedUpdate()
         {
             // Read the inputs.
-            bool crouch = Input.GetKey(KeyCode.LeftControl);
+            float v = CrossPlatformInputManager.GetAxis("Vertical");
+            float vr = CrossPlatformInputManager.GetAxisRaw("Vertical");
             float h = CrossPlatformInputManager.GetAxis("Horizontal");
+            float hr = CrossPlatformInputManager.GetAxisRaw("Horizontal");
             //HACK: offset camera target
             Vector3 newPosition = this.cameraTarget.localPosition;
-            if (crouch)
-            {
-                newPosition[1] = -64;
 
-            }
-            else
-            {
-                newPosition[1] = 0;
-            }
+            if (hr!=0)
+                newPosition[0] = 64;
 
+            newPosition[1] = vr * 64;
             this.cameraTarget.localPosition = newPosition;
+            
             // Pass all parameters to the character control script.
-            Move(h, crouch, m_Jump);
+            Move(h, v<0, m_Jump);
             m_Jump = false;
         }
 
