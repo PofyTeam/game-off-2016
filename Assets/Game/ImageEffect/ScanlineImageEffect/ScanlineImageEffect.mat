@@ -147,16 +147,16 @@ Material:
       second: 1
     - first:
         name: _glowBlend
-      second: 0.5
+      second: 0
     - first:
         name: _maskBlend
-      second: 0.5
+      second: 1
     - first:
         name: _maskSize
       second: 240
     - first:
         name: _vignetteBlend
-      second: 0.5
+      second: 1
     m_Colors:
     - first:
         name: _Color
