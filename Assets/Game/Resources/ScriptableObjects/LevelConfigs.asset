@@ -13,4 +13,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LevelConfig
   levelIds:
   - Jurassic
-  - Caveman

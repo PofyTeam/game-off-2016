@@ -188,8 +188,19 @@
 
         void Fire()
         {
+            SpawnProjectile();
             Debug.LogWarning("FIRING! " + this.gunCharge.current);
             this.gunCharge.current = 0;
+        }
+
+        void SpawnProjectile()
+        {
+
+        }
+
+        void UpdateProjectiles()
+        {
+            //foreach(this.)
         }
 
         private void InputFixedUpdate()
