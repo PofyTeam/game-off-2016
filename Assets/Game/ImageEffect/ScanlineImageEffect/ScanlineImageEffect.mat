@@ -153,7 +153,7 @@ Material:
       second: 0.5
     - first:
         name: _maskSize
-      second: 120
+      second: 240
     - first:
         name: _vignetteBlend
       second: 0.34
